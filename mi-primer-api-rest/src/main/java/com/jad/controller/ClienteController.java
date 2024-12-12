@@ -18,12 +18,12 @@ public class ClienteController {
     }
 
     @PutMapping("cliente")
-    public Cliente update (Cliente cliente){
+    public Cliente update (@RequestBody Cliente cliente){
         return clienteService.save(cliente);
     }
 
     @DeleteMapping("cliente/{id}")
-    public void delete (Integer id){
+    public void delete (@PathVariable Integer id){
         Cliente clienteDelete=clienteService.findById(id);
         clienteService.delete(clienteDelete);
     }
